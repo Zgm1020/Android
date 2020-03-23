@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login"
+    android:background="@drawable/page"
+    android:orientation="vertical">
+
+
+
+<!--  输入框  -->
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="290dp"
+        android:hint="用户名/账号"
+        android:textSize="20sp"
+        android:inputType="numberSigned"
+        android:autofillHints="" />
+    <!--    输入框     -->
+    <EditText
+        android:id="@+id/et_psw"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="密码"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:importantForAutofill="no" />
+    <CheckBox
+        android:id="@+id/re_pw"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="记住密码"
+        android:layout_alignParentStart="true" />
+<!--按钮-->
+    <Button
+        style="@style/CardView"
+        android:id="@+id/btn_login"
+        android:text="登录"
+        android:textSize="24sp"
+
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"/>
+<RelativeLayout
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp" />
+<!--  layout_weight="1" layout_width="0dp" 实现均分效果  -->
+    <TextView
+        android:id="@+id/tv_find_psw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="找回密码"
+        android:layout_marginStart="20dp" />
+
+</RelativeLayout>
+
+
+
+</LinearLayout>

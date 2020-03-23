@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_home">首页</string>
+    <string name="title_backlog">待办</string>
+    <string name="title_mine">我的</string>
+    <string name="user_name">用户名</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="button1">供应链管理</string>
+    <string name="welcome">欢迎回来</string>
+    <string name="findpwd">找回密码</string>
+    <string name="registter">注册</string>
+    <string name="usename">用户名/账号</string>
+    <string name="password">密码</string>
+    <string name="rememberpwd">记住密码</string>
+    <string name="login">登录</string>
+    <string name="gender">\u3000\u3000性别：</string>
+    <string name="email">\u3000\u3000邮箱：</string>
+    <string name="phone">\u3000\u3000联系电话：</string>
+    <string name="company">\u3000\u3000所属公司:</string>
+    <string name="address">\u3000\u3000公司地址:</string>
+    <string name="name">\u3000\u3000姓名:</string>
+    <string name="purchase">\u3000\u3000采购申请</string>
+    <string name="change">\u3000\u3000退/换货申请</string>
+    <string name="leave">\u3000\u3000请假审批</string>
+    <string name="overtime">\u3000\u3000加班审批</string>
+    <string name="business">\u3000\u3000出差审批</string>
+    <string name="hint">搜索</string>
+    <string name="supplchain">供应连管理</string>
+    <string name="orderplan">订单计划</string>
+
+
+</resources>

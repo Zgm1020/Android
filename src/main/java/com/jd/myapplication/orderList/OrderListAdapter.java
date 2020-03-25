@@ -40,14 +40,15 @@ public class OrderListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder=null;
-        if (holder==null){
-            mLayoutInflater.inflate(R.layout.listview_item_order,null);
+        if (convertView==null){
+            convertView=mLayoutInflater.inflate(R.layout.listview_item_order,null);
             holder=new ViewHolder();
             holder.mTv_1=convertView.findViewById(R.id.tv_1);
             holder.mTv_2=convertView.findViewById(R.id.tv_2);
             holder.mTv_3=convertView.findViewById(R.id.tv_3);
             holder.mTv_4=convertView.findViewById(R.id.tv_4);
             holder.mTv_5=convertView.findViewById(R.id.tv_5);
+            convertView.setTag(holder);
         }else{
             holder= (ViewHolder) convertView.getTag();
         }
@@ -56,6 +57,6 @@ public class OrderListAdapter extends BaseAdapter {
         holder.mTv_3.setText("sdvsdva");
         holder.mTv_4.setText("asdbas");
         holder.mTv_5.setText("asbv");
-        return null;
+        return convertView;
     }
 }

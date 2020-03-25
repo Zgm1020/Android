@@ -34,7 +34,7 @@ public class OrderNavigation extends AppCompatActivity {
         setContentView(R.layout.activity_order_navigation);
         mTabLayout=findViewById(R.id.xtab_layout);
         mViewPager=findViewById(R.id.view_pager);
-        //初始化数据
+
         initData();
     }
 

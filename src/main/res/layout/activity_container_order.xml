@@ -12,11 +12,11 @@
         android:id="@+id/sv_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="搜索"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:queryHint="搜索" />
     <LinearLayout
         android:id="@+id/ll_text"
         android:layout_width="match_parent"

@@ -20,7 +20,7 @@ public class SupplyActivity extends AppCompatActivity {
         mBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
+                Intent intent=null;
                 intent = new Intent(SupplyActivity.this, ContainerOrderActivity.class);
                 startActivity(intent);
             }

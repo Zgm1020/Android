@@ -5,6 +5,7 @@
         <domain-config cleartextTrafficPermitted="true">
             <domain includeSubdomains="true">www.sunofbeach.net</domain>
             <domain includeSubdomains="true">imgs.sunofbeaches.com</domain>
+            <domain includeSubdomains="true">172.16.150.136:8080</domain>
         </domain-config>
     </domain-config>
 </network-security-config>

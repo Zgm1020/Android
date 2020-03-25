@@ -23,6 +23,7 @@ public class ContainerOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_container_order);
         fragment_order=new Fragment_order();
         mAdd=findViewById(R.id.tv_add);
+
         mHandle=findViewById(R.id.tv_handle);
         mFinish=findViewById(R.id.tv_finish);
         mAnalyze=findViewById(R.id.tv_analyze);

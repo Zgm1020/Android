@@ -111,11 +111,11 @@
 
         >
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint" />
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/textInputEditText"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/hint" />-->
 
     </LinearLayout>
 

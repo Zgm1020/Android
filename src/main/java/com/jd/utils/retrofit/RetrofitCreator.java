@@ -7,8 +7,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitCreator {
-
-    public static final String BASE_URL = "https://api.sunofbeach.net/shop/api";
+    //sqlserver连接地址
+    //public static final String BASE_URL = "http://172.16.150.136:52450";
+    //mysql连接地址
+    //public static final String BASE_URL = "http://172.16.150.136:8080";
+    //手机连接地址
+    public static final String BASE_URL = "http://172.20.10.10:8080";
+    // public static final String BASE_URL = "https://api.sunofbeach.net/shop/api";
     public static final int CONNECT_TIME_OUT = 10000;//毫秒
     private Retrofit mRetrofit;
 

@@ -60,6 +60,7 @@ public class Fragment_mine extends Fragment {
         user.enqueue(new Callback<MysqlUserJsonResult>() {
             @Override
             public void onResponse(Call<MysqlUserJsonResult> call, Response<MysqlUserJsonResult> response) {
+                if(response!=null&&response.code()>0){
                 MysqlUserJsonResult body = response.body();
                 List<MysqlUserJsonResult.DataBean> data = body.getData();
                 MysqlUserJsonResult.DataBean dataBean = data.get(0);
@@ -72,11 +73,12 @@ public class Fragment_mine extends Fragment {
                 mTv4.setText(phone);
                 mTv5.setText(created);
                 System.out.println(username);
+                }
             }
 
             @Override
             public void onFailure(Call<MysqlUserJsonResult> call, Throwable t) {
-                Toast.makeText(getActivity(),"请求网络出错,正在紧急修复",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"请求网络出错",Toast.LENGTH_SHORT).show();
             }
         });
     }

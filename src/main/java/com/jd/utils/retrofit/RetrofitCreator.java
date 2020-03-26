@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitCreator {
     //sqlserver连接地址
-    //public static final String BASE_URL = "http://172.16.150.136:52450";
+    //public static final String BASE_URL = "http://localhost:52450";
+   //public static final String BASE_URL = "http://172.16.100.110:8083";
     //mysql连接地址
     //public static final String BASE_URL = "http://172.16.150.136:8080";
     //手机连接地址

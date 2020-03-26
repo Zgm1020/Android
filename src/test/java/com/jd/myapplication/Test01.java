@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.gson.JsonObject;
 import com.jd.myapplication.domain.JsonResult;
 import com.jd.myapplication.domain.JsonResultPost;
+import com.jd.myapplication.domain.SqlServerOrderListJsonResult;
 import com.jd.utils.GetPostUtil;
 import com.jd.utils.HttpUtil;
 import com.jd.utils.retrofit.RetrofitCreator;
@@ -240,5 +241,28 @@ public class Test01 {
         });
         ThreadSleep.sleep();
     }
+    @Test
+    public void requestParames() {
+        WebInterface webInterface = RetrofitCreator.getInstance().getRetrofit().create(WebInterface.class);
+        Map<String,String> map=new HashMap<>();
+        String supplyId = map.put("supply_id", "111");
+        retrofit2.Call<SqlServerOrderListJsonResult> orderList = webInterface.getOrderList(map);
+        orderList.enqueue(new retrofit2.Callback<SqlServerOrderListJsonResult>() {
+            @Override
+            public void onResponse(retrofit2.Call<SqlServerOrderListJsonResult> call, retrofit2.Response<SqlServerOrderListJsonResult> response) {
+                List<SqlServerOrderListJsonResult.MessageBean> message = response.body().getMessage();
+                for (SqlServerOrderListJsonResult.MessageBean messageBean : message) {
+                    System.out.println(messageBean.getMPO_CODE());
+                }
 
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<SqlServerOrderListJsonResult> call, Throwable t) {
+
+            }
+        });
+        ThreadSleep.sleep();
+
+    }
 }

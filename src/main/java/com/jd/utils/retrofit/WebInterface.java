@@ -3,6 +3,7 @@ package com.jd.utils.retrofit;
 import com.jd.myapplication.domain.JsonResult;
 import com.jd.myapplication.domain.JsonResultPost;
 import com.jd.myapplication.domain.JsonResultTitle;
+import com.jd.myapplication.domain.SqlServerOrderListJsonResult;
 
 import java.util.Map;
 
@@ -22,4 +23,6 @@ public interface WebInterface {
    Call<JsonResultPost> getParmesJson1(@Body Map<String,String> parmes);
     @GET("/discovery/categories")
     Call<JsonResultTitle> getTitle();
+    @POST("/ActionApi/PurchaseOrderInfo/GetPOMainTable")
+    Call<SqlServerOrderListJsonResult> getOrderList(@Body Map<String,String> parmes);
 }

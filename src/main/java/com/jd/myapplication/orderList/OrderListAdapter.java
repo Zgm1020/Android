@@ -1,6 +1,7 @@
 package com.jd.myapplication.orderList;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,11 +9,26 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jd.myapplication.R;
+import com.jd.myapplication.domain.SqlServerOrderListJsonResult;
+import com.jd.utils.retrofit.RetrofitCreator;
+import com.jd.utils.retrofit.WebInterface;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static android.content.ContentValues.TAG;
 
 public class OrderListAdapter extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mLayoutInflater;
+    private List<SqlServerOrderListJsonResult.MessageBean> items = new ArrayList<>();
 
     public OrderListAdapter(Context mContext) {
         this.mContext = mContext;
@@ -21,7 +37,7 @@ public class OrderListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return items.size();
     }
 
     @Override
@@ -52,11 +68,36 @@ public class OrderListAdapter extends BaseAdapter {
         }else{
             holder= (ViewHolder) convertView.getTag();
         }
-        holder.mTv_1.setText("1");
-        holder.mTv_2.setText("asdggasdf");
-        holder.mTv_3.setText("sdvsdva");
-        holder.mTv_4.setText("asdbas");
-        holder.mTv_5.setText("asbv");
+
+        requestParames();
+        SqlServerOrderListJsonResult.MessageBean messageBean = items.get(position);
+        holder.mTv_1.setText(position);
+        holder.mTv_2.setText(messageBean.getMPO_CODE());
+        holder.mTv_3.setText(messageBean.getMPOR_ORG_NAME());
+        holder.mTv_4.setText(messageBean.getMPO_TYPE());
+        holder.mTv_5.setText(messageBean.getMPOM_EXPECT_RECE_TIME());
         return convertView;
+    }
+
+    private void requestParames() {
+        WebInterface webInterface = RetrofitCreator.getInstance().getRetrofit().create(WebInterface.class);
+        Map<String,String> map=new HashMap<>();
+        String supplyId = map.put("supply_id", "111");
+        Call<SqlServerOrderListJsonResult> orderList = webInterface.getOrderList(map);
+        orderList.enqueue(new Callback<SqlServerOrderListJsonResult>() {
+            @Override
+            public void onResponse(Call<SqlServerOrderListJsonResult> call, Response<SqlServerOrderListJsonResult> response) {
+                List<SqlServerOrderListJsonResult.MessageBean> message = response.body().getMessage();
+                items=message;
+                Log.d(TAG, "onResponse: 请求成功");
+            }
+
+            @Override
+            public void onFailure(Call<SqlServerOrderListJsonResult> call, Throwable t) {
+
+            }
+        });
+
+
     }
 }

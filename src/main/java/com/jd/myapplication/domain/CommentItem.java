@@ -13,6 +13,7 @@ public class CommentItem {
     public CommentItem(String articleId, String commentContent) {
         this.articleId = articleId;
         this.commentContent = commentContent;
+
     }
 
     public String getArticleId() {
